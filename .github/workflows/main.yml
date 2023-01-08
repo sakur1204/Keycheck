@@ -14,7 +14,7 @@ jobs:
     - name: build
       run: chmod +x build.sh && ./build.sh
     - name: find
-      run: find $pwd -name "keycheck*" -exec cp -a $pwd
+      run: find $pwd -name "keycheck*"
     - name: Upload build
       uses: actions/upload-artifact@v3
       with:
