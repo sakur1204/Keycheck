@@ -14,9 +14,13 @@ jobs:
     - name: build
       run: chmod +x build.sh && ./build.sh
     - name: find
-      run: find $pwd -name "keycheck*"
+      run: find $pwd "keycheck"
+    - name: ls
+      run: ls -la obj/local/armeabi/objs/keycheck
+    - name: ls2
+      run: ls -la obj/local/armeabi/objs/keycheck/*
     - name: Upload build
       uses: actions/upload-artifact@v3
       with:
         name: keycheck
-        path: obj/local/armeabi/objs/keycheck
+        path: keycheck*
